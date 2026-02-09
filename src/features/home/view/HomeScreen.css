@@ -1,0 +1,144 @@
+.header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px 16px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.header-icon-purchase {
+  display: flex;
+  gap: 8px;
+  color: orange;
+}
+
+.main {
+  align-items: start;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px 20px 16px 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content {
+  display: flex;
+  gap: 32px;
+  width: 100%;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.main-content-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.main-content-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #939191;
+  line-height: 24px;
+}
+
+.main-content-right {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1;
+}
+
+.main-content-right img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.button-order {
+  width: fit-content;
+  padding: 12px 24px;
+}
+
+.main-content-top-menu {
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content-top-menu-title {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main-content-top-menu-title .title {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  color: orange;
+  line-height: 24px;
+  margin: 0;
+}
+
+.main-content-top-menu-title .subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #939191;
+  line-height: 24px;
+  margin: 0;
+}
+
+.main-content-top-menu-list {
+  display: flex;
+  gap: 16px;
+}
+
+.main-content-top-menu-list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.main-content-top-menu-list-item img {
+  width: 10%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.main-content-top-menu-list-item .menu-name {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: orange;
+  line-height: 24px;
+  margin: 0;
+}
+
+.main-content-top-menu-list-item .menu-description {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #939191;
+  line-height: 24px;
+  margin: 0;
+}
+
+.main-content-top-menu-list-item .menu-price {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: orange;
+  line-height: 24px;
+  margin: 0;
+}

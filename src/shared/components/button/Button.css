@@ -1,0 +1,30 @@
+.button {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background-color: #ff9800;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-primary {
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: #f57c00;
+}
+
+.button-secondary {
+  background-color: white;
+  border: 1px solid orange;
+  color: orange;
+}

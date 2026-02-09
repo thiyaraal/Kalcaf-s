@@ -1,0 +1,69 @@
+@import "@fontsource/kurale";
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 24px 64px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-content-form-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.main-content-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-content-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0;
+  color: #000000;
+}
+
+.main-content-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  margin: 0;
+  color: #6b6b6b;
+}
+
+.main-content-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-content-image img {
+  width: 100%;
+  /* max-width: 100%; */
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  display: flex;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.footer-text,
+.footer-link {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #000000;
+}
