@@ -98,47 +98,109 @@
   margin: 0;
 }
 
-.main-content-top-menu-list {
+.card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: orange;
+  line-height: 24px;
+  margin: 0;
+}
+
+.button-order-wrapper {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.button-order-btn {
+  border-radius: 10px;
+  width: 60px;
+  height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 12px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
 
-.main-content-top-menu-list-item {
+.carousel {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  flex: 1;
+  gap: 24px;
+  align-items: center;
 }
 
-.main-content-top-menu-list-item img {
-  width: 10%;
-  height: auto;
-  border-radius: 10px;
+.menu-card {
+  width: 220px;
+  transition: transform 0.3s ease;
 }
 
-.main-content-top-menu-list-item .menu-name {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: orange;
-  line-height: 24px;
-  margin: 0;
+.menu-card.side {
+  transform: scale(0.8);
 }
 
-.main-content-top-menu-list-item .menu-description {
-  font-family: "Poppins", sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #939191;
-  line-height: 24px;
-  margin: 0;
+.menu-card.active {
+  transform: scale(1);
+  z-index: 2;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
 }
 
-.main-content-top-menu-list-item .menu-price {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  color: orange;
-  line-height: 24px;
-  margin: 0;
+.carousel-arrow {
+  background: rgb(118, 40, 40);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-arrow:hover {
+  background-color: #f5f3ed;
+}
+
+.main-content-menu-button {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.main-content-menu-item {
+  padding-left: 40px;
+  padding-right: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+}
+
+.btn-carousel {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

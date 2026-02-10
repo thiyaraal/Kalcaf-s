@@ -1,0 +1,40 @@
+.menu-card {
+  width: 18rem;
+  background-color: #f5f3ed;
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.menu-card-image {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.menu-card .card-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: orange;
+  margin: 0;
+}
+
+.menu-card .card-text {
+  font-size: 12px;
+  color: #939191;
+}
+
+.button-order-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  margin: 0;
+  color: orange;
+}
+
+.button-order-btn {
+  width: 60px;
+  height: 32px;
+}
