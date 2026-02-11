@@ -1,8 +1,13 @@
 .menu-card {
   width: 18rem;
+  height: 420px; /* tentukan tinggi tetap */
   background-color: #f5f3ed;
   border-radius: 12px;
   padding: 12px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .menu-card-image {

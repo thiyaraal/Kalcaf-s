@@ -1,10 +1,11 @@
 import AuthHeader from "../../../shared/components/header/AuthHeader";
 import "./HomeScreen.css";
-import TextInput from "../../../shared/components/text_input/TextInput";
 import Button from "../../../shared/components/button/Button";
 import MenuCard from "../../../shared/components/card/MenuCard";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
+import SearchBar from "../../../shared/components/search_bar/SearchBar";
+import { useMenuViewModel } from "../viewModel/UseMenuViewModel";
 
 const HomeScreen = () => {
   const favMenus = [
@@ -29,43 +30,13 @@ const HomeScreen = () => {
     },
   ];
 
-  const menu = [
-    {
-      image: "https://i.postimg.cc/kGbvp73w/image-23.png",
-      title: "Ice Cream",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      price: "$10.00",
-    },
-    {
-      image: "https://i.postimg.cc/kGbvp73w/image-23.png",
-      title: "Ice Cream",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      price: "$10.00",
-    },
-    {
-      image: "https://i.postimg.cc/kGbvp73w/image-23.png",
-      title: "Ice Cream",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      price: "$10.00",
-    },
-    {
-      image: "https://i.postimg.cc/kGbvp73w/image-23.png",
-      title: "Ice Cream",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      price: "$10.00",
-    },
-    {
-      image: "https://i.postimg.cc/kGbvp73w/image-23.png",
-      title: "Ice Cream",
-      description:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-      price: "$10.00",
-    },
-  ];
+  const {
+    categories,
+    activeCategoryId,
+    setActiveCategoryId,
+    menuItems,
+    loading,
+  } = useMenuViewModel();
 
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -81,12 +52,7 @@ const HomeScreen = () => {
     <>
       <section className="header">
         <AuthHeader title="Kalcaf's" subtitle="" />
-        <TextInput
-          type="text"
-          placeholder="Enter your search"
-          value=""
-          onChange={() => {}}
-        />
+        <SearchBar />
         <div className="header-icon-purchase">
           <FaShoppingCart />
         </div>
@@ -150,29 +116,36 @@ const HomeScreen = () => {
         </div>
 
         <div className="main-content-menu-button">
-          <Button
-            className="button-order-btn"
-            label="Food"
-            onClick={() => {}}
-          />
-          <Button
-            variant="secondary"
-            className="button-order-btn"
-            label="Drink"
-            onClick={() => {}}
-          />
-          <Button
-            variant="secondary"
-            className="button-order-btn"
-            label="Dessert"
-            onClick={() => {}}
-          />
+          {categories.map((category) => (
+            <Button
+              key={category.id}
+              variant={
+                activeCategoryId === category.id ? "primary" : "secondary"
+              }
+              className="button-order-btn"
+              label={category.name}
+              onClick={() => setActiveCategoryId(category.id)}
+            />
+          ))}
         </div>
 
         <div className="main-content-menu-item">
-          {menu.map((menu, index) => {
-            return <MenuCard key={index} {...menu} variant={"side"} />;
-          })}
+          {loading ? (
+            <p>Loading menu...</p>
+          ) : menuItems.length > 0 ? (
+            menuItems.map((item) => (
+              <MenuCard
+                key={item.id}
+                image={item.image}
+                title={item.title}
+                description={item.description}
+                price={`$${item.price.toFixed(2)}`}
+                variant="side"
+              />
+            ))
+          ) : (
+            <p>No menu items available</p>
+          )}
         </div>
       </section>
     </>
