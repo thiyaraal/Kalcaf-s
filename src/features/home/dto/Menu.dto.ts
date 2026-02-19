@@ -6,12 +6,12 @@ export interface MenuItemDTO {
   price: number;
 }
 
-export interface CategoryDTO {
+export interface CategoryDTOfIrst {
   id: number;
   name: string;
   items: MenuItemDTO[];
 }
 
 export interface MenuResponseDTO {
-  categories: CategoryDTO[];
+  categories: CategoryDTOfIrst[];
 }

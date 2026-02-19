@@ -1,10 +1,13 @@
 import { useState } from "react";
 import { AuthController } from "../controller/LoginController";
 
+import { useNavigate } from "react-router-dom";
+
 export function useLoginVM() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const controller = new AuthController();
 
@@ -19,10 +22,17 @@ export function useLoginVM() {
     try {
       const result = await controller.login(username, password);
       console.log("Login success:", result);
-      alert("Login Successful!");
+      navigate("/home");
     } catch (error: any) {
-      console.error("Login error:", error);
-      alert(error.message || "An unexpected error occurred");
+      console.error("Login error full details:", error);
+      if (error.response) {
+        console.error("Login error response:", error.response);
+        alert(
+          `Login Failed: ${error.response.data?.msg || error.response.statusText}`,
+        );
+      } else {
+        alert(error.message || "An unexpected error occurred");
+      }
     } finally {
       setLoading(false);
     }

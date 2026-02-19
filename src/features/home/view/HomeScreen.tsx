@@ -1,13 +1,16 @@
 import AuthHeader from "../../../shared/components/header/AuthHeader";
 import "./HomeScreen.css";
+import { useNavigate } from "react-router-dom";
 import Button from "../../../shared/components/button/Button";
 import MenuCard from "../../../shared/components/card/MenuCard";
 import { useState } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import SearchBar from "../../../shared/components/search_bar/SearchBar";
-import { useMenuViewModel } from "../viewModel/UseMenuViewModel";
+import { useCategoryViewModel } from "../viewModel/CategoryMenuViewModel";
 
 const HomeScreen = () => {
+  const navigate = useNavigate();
+
   const favMenus = [
     {
       image: "https://i.postimg.cc/Nj8nSsrq/image-18.png",
@@ -30,13 +33,8 @@ const HomeScreen = () => {
     },
   ];
 
-  const {
-    categories,
-    activeCategoryId,
-    setActiveCategoryId,
-    menuItems,
-    loading,
-  } = useMenuViewModel();
+  const { categories, activeCategoryId, selectCategory } =
+    useCategoryViewModel();
 
   const [activeIndex, setActiveIndex] = useState(1);
 
@@ -53,13 +51,17 @@ const HomeScreen = () => {
       <section className="header">
         <AuthHeader title="Kalcaf's" subtitle="" />
         <SearchBar />
-        <div className="header-icon-purchase">
+        <div
+          className="header-icon-purchase"
+          onClick={() => navigate("/purchase")}
+          style={{ cursor: "pointer" }}
+        >
           <FaShoppingCart />
         </div>
       </section>
 
       <section className="main">
-        <div className="main-content">
+        <div className="home-main-content">
           <div className="main-content-left">
             <p className="main-content-title">
               Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -123,13 +125,13 @@ const HomeScreen = () => {
                 activeCategoryId === category.id ? "primary" : "secondary"
               }
               className="button-order-btn"
-              label={category.name}
-              onClick={() => setActiveCategoryId(category.id)}
+              label={category.categoryName}
+              onClick={() => selectCategory(category.id)}
             />
           ))}
         </div>
 
-        <div className="main-content-menu-item">
+        {/* <div className="main-content-menu-item">
           {loading ? (
             <p>Loading menu...</p>
           ) : menuItems.length > 0 ? (
@@ -146,7 +148,7 @@ const HomeScreen = () => {
           ) : (
             <p>No menu items available</p>
           )}
-        </div>
+        </div> */}
       </section>
     </>
   );

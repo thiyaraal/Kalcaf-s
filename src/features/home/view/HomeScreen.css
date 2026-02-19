@@ -24,12 +24,13 @@
   box-sizing: border-box;
 }
 
-.main-content {
+.home-main-content {
   display: flex;
   gap: 32px;
   width: 100%;
   box-sizing: border-box;
   align-items: center;
+  padding: 100px;
 }
 
 .main-content-left {

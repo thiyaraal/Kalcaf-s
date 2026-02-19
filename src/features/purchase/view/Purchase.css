@@ -1,4 +1,4 @@
-.main-content {
+.main-purchase {
   padding: 24px 64px;
   display: flex;
   flex-direction: column;
@@ -8,12 +8,100 @@
   max-width: none;
 }
 
-.title {
-  font-size: 16px;
-  font-weight: 400;
-  color: orange;
+.title-icon-purchase {
   display: flex;
-  justify-content: flex-start;
+  gap: 8px;
   align-items: center;
-  text-align: left;
+}
+
+.title-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.purchase-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.image-purchase-img {
+  border-radius: 20px;
+  object-fit: cover;
+}
+.purchase-card {
+  padding: 16px 16px 16px 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+}
+
+.detail-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.price-purchase {
+  color: orange;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 24px;
+}
+
+.title-purchase {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  line-height: 12px;
+}
+
+.image-purchase {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-purchase img {
+  width: 120px;
+  height: 120px;
+}
+
+.purchase-menu-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+.purchase-menu-detail p {
+  margin: 0;
+}
+
+.purchase-menu-detail-button {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.purchase-menu-detail-button-minus {
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.purchase-menu-detail-button-plus {
+  background-color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

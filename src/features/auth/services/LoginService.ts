@@ -7,6 +7,10 @@ export class AuthService {
   private repo = new AuthRepository();
 
   async login(req: LoginRequest): Promise<LoginResponse> {
+    // Clear existing token to prevent sending stale auth headers
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+
     const res = await this.repo.login(req);
 
     if (!res.data.success) {
@@ -14,6 +18,7 @@ export class AuthService {
     }
 
     const loginResult = mapLoginResult(res.data.result);
+    console.log("LOGIN SUCCESS - TOKEN:", loginResult.token);
 
     localStorage.setItem("token", loginResult.token);
     localStorage.setItem("user", JSON.stringify(loginResult.user));

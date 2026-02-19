@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import type { CategoryDTO } from "../dto/Menu.dto";
+import type { CategoryDTOfIrst } from "../dto/Menu.dto";
 import { menuSerivice } from "../services/MenuService";
 
 export const useMenuViewModel = () => {
-  const [categories, setCategories] = useState<CategoryDTO[]>([]);
+  const [categories, setCategories] = useState<CategoryDTOfIrst[]>([]);
   const [activeCategoryId, setActiveCategoryId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
 
